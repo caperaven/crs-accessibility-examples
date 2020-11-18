@@ -19,8 +19,7 @@
     {
       "title": "Toolbars",
       "hash": "#toolbars",
-      "view": "toolbars",
-      "html-only": true
+      "view": "toolbars"
     },
     {
       "title": "404",
