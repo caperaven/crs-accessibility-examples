@@ -11,11 +11,16 @@
       "hasStyle": true
     },
     {
-      "title": "About",
-      "hash": "#about",
-      "view": "about",
-      "html-only": true,
-      "hasStyle": true
+      "title": "Application Framework",
+      "hash": "#framework",
+      "view": "framework",
+      "html-only": true
+    },
+    {
+      "title": "Toolbars",
+      "hash": "#toolbars",
+      "view": "toolbars",
+      "html-only": true
     },
     {
       "title": "404",
