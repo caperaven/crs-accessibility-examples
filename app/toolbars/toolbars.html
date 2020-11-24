@@ -1,25 +1,79 @@
 <article>
     <section>
         <h2>How to define toolbars</h2>
-
         <p>
-            .. stuff you need to know.
+            Toolbars act as containers for grouping a set of controls, usually buttons.
         </p>
-
-        <html-to-text>
-            <div role="toolbar">
-                <button>Action 1</button>
-            </div>
-        </html-to-text>
+        <p>
+            The <a href="https://www.w3.org/TR/wai-aria-1.1/#toolbar" target="_blank">toolbar</a> role can be used to communicate the presence and purpose of the grouped elements to screen reader users.
+            Grouping controls into toolbars is an effective way of reducing the number of tab stops on keyboard. Below is a simple mark-up example of an accessible toolbar implementation.
+        </p>
+        <html-to-text src="app/templates/toolbar.html"></html-to-text>
+        <p>
+            <a href="https://www.w3.org/TR/wai-aria-practices/examples/toolbar/toolbar.html"  target="_blank">Toolbar Example</a> implements a toolbar using a roving tabindex to manage focus,
+            and contains several types of controls.
+        </p>
+        <p>
+            The following points should be considered to optimize the use of toolbars:
+        </p>
+        <ul>
+            <li>
+                Implement focus management. One tab stop for the toolbar, and arrow keys move focus among toolbar controls.
+                <ul>
+                    <li>In horizontal toolbars, left and right arrow-keys navigate among controls. Up and down arrow-keys can duplicate
+                    left and right arrow-keys respectively, or be reserved to operate controls.</li>
+                    <li>In vertical toolbars, up and down arrow-keys navigate among controls, while left and right arrow-keys can duplicate
+                    the navigation, or be reserved to operate controls.</li>
+                    <li>In toolbars with multiple rows of controls, left and right arrow-keys can provide navigation that wraps from row
+                    to row, reserving vertical keys for operation.</li>
+                </ul>
+            </li>
+            <li>Avoid including controls whose operation requires the pair of arrow keys used for toolbar navigation
+                i.e. don't place a horizontal control within a horizontal toolbar.</li>
+            <li>Use toolbar as a grouping element only if the group contains 3 or more controls.</li>
+        </ul>
     </section>
-
+    <section>
+        <h2>Keyboard Interaction</h2>
+        <ul>
+            <li>
+                Tab and Shift+Tab move focus into and out of the toolbar. When focus moves into a toolbar:
+                <ul>
+                    <li>Focus is set on the first control that is not disabled when moving focus into the toolbar initially.</li>
+                    <li>If the toolbar had previously contained focus, focus is either set on the last control that had focus
+                    or on the first non-disabled control</li>
+                </ul>
+            </li>
+            <li>
+                For horizontal toolbars:
+                <ul>
+                    <li>Left arrow key moves focus to previous control. Optional: wrap focus from first to last</li>
+                    <li>Right arrow key moves focus to next control. Option: wrap focus from last to first</li>
+                </ul>
+            </li>
+            <li>Home key(optional), moves focus to first element</li>
+            <li>End key(optional), moves focus to last element</li>
+            <li>For guidance regarding focusability of disabled controls, please refer to WAI-ARIA Authoring Practices 1.1 -
+                <a href="https://www.w3.org/TR/wai-aria-practices/#kbd_disabled_controls" target="_blank">6.7 Focusablity of disabled controls</a> section
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>WAI-ARIA Roles, States & Properties</h2>
+        <ul>
+            <li>The element serving as the toolbar has role <a href="https://www.w3.org/TR/wai-aria-1.1/#toolbar" target="_blank">toolbar</a>.</li>
+            <li>If the toolbar has a visible label, it's reference by <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby" target="_blank">aria-labelledby</a>.
+            Else the toolbar element has a label provided by <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label" target="_blank">aria-label</a>.</li>
+            <li>If vertical toolbar, toolbar element has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-orientation" target="_blank">aria-orientation</a> set to vertical.
+            Default orientation is horizontal.</li>
+        </ul>
+    </section>
     <section>
         <h2>References</h2>
         <nav>
-            ... links to web accessibility documentation
+            Visit the <a href="https://www.w3.org/TR/wai-aria-practices/#toolbar" target="_blank">WAI-ARIA Authoring Practices 1.1</a> to read up more on implementing accessible toolbars.
         </nav>
     </section>
-
     <section>
         <h2>Examples</h2>
         <nav>
