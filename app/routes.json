@@ -29,6 +29,12 @@
       "html-only": true
     },
     {
+      "title": "Lists",
+      "hash": "#lists",
+      "view": "lists",
+      "html-only": true
+    },
+    {
       "title": "404",
       "hash": "#404",
       "view": "404",
