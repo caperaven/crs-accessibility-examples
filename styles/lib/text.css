@@ -11,3 +11,10 @@ h1 {
     border: transparent;
     outline: none;
 }
+
+code {
+    width: 100%;
+    background: #efefef;
+    display: block;
+    padding: 1rem;
+}
