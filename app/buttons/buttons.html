@@ -14,11 +14,40 @@
                 attribute set to either menu or true to tell assistive technologies that it's dealing with a menu button.</li>
         </ul>
         <p>
-
+            Below is an example of a div that wraps an svg which should act as a button when activated:
+        </p>
+        <html-to-text src="/templates/svg-buttons.html"></html-to-text>
+        <p>
+            Here is another example of a similar type of button which acts as a toggle button with the aria-pressed attribute set to "true":
+        </p>
+        <html-to-text src="/templates/svg-checkox-button.html"></html-to-text>
+        <p>
+            The <a href="https://www.w3.org/TR/wai-aria-practices/examples/button/button.html" target="_blank">button examples</a>
+            demonstrate the button design pattern.
         </p>
     </section>
     <section>
         <h2>Keyboard Interaction</h2>
+        <p>
+            When the button has focus:
+        </p>
+        <ul>
+            <li>Space: Activates the button</li>
+            <li>Enter: Activates the button</li>
+            <li>
+                Following button activation, focus is set depending on the type of action the button performs:
+                <ul>
+                    <li>If activating the button opens a dialog, focus moves into the dialog</li>
+                    <li>If activating the button closing the dialog, focus returns to te button that opened the dialog
+                    unless the function performed in the dialog leads to a different element</li>
+                    <li>If activating the button does not dismiss the current context, the focus usually remains on the
+                        button after activation</li>
+                    <li>If the button action changes context, then focus is usually moved to the starting point for the action</li>
+                    <li>If the button is activated using shortcut keys, focus usually stays within the context from which
+                    the shortcut key was activated.</li>
+                </ul>
+            </li>
+        </ul>
     </section>
     <section>
         <h2>WAI-ARIA Roles, States & Properties</h2>
