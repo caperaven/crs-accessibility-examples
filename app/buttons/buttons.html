@@ -51,11 +51,34 @@
     </section>
     <section>
         <h2>WAI-ARIA Roles, States & Properties</h2>
+        <ul>
+            <li>Has role <a href="https://www.w3.org/TR/wai-aria-1.1/#button" target="_blank">button</a></li>
+            <li>The button has an accessible label. By default, the accessible name is computed from any text content
+            within the element. It can be provided with <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby" target="_blank">aria-labelledby</a>
+                or <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label" target="_blank">aria-label</a></li>
+            <li>If a description of the button's function is present, the button has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-describedby" target="_blank">aria-describedby</a>
+            set to the descriptor element's ID</li>
+            <li>When the action associated with a button is unavailable, the button has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-disabled" target="_blank">aria-disabled</a> = true</li>
+            <li>If the button is a toggle, it has the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-pressed" target="_blank">aria-pressed</a> state set to true/false when toggle is on/off.</li>
+        </ul>
     </section>
     <section>
-        <h2>References</h2>
+        <h2 id="references">References</h2>
+        <nav aria-labelledby="references">
+            <ul>
+                <li>Visit the <a href="https://www.w3.org/TR/wai-aria-practices/#button" target="_blank">WAI-ARIA Authoring Practices 1.1</a> to read up more on implementing accessible buttons.</li>
+                <li>Refer to the <a href="https://www.w3.org/TR/wai-aria-practices/#menubutton" target="_blank">menu button section</a> on how to implement menu buttons.</li>
+                <li>For more examples, please refer to MDN's reference on implementing <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role" target="_blank">ARIA for buttons</a></li>
+            </ul>
+        </nav>
     </section>
     <section>
-        <h2>Examples</h2>
+        <h2 id="examples">Examples</h2>
+        <nav aria-labelledby="examples">
+            <ul>
+                <li><a href="https://github.com/caperaven/crs-accessibility-examples/blob/master/templates/svg-buttons.html" target="_blank">SVG button example</a></li>
+                <li><a href="https://github.com/caperaven/crs-accessibility-examples/blob/master/templates/svg-checkox-button.html" target="_blank">SVG checkbox example</a></li>
+            </ul>
+        </nav>
     </section>
 </article>
