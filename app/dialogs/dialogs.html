@@ -15,18 +15,86 @@
         provide means for moving keyboard focus outside the dialog window without closing the dialog.</p>
         <p>The <a href="https://www.w3.org/TR/wai-aria-1.1/#alertdialog" target="_blank">alertdialog</a> role is used for dialogs that divert the users' attention
             to a brief important message. Refer to the <a href="https://www.w3.org/TR/wai-aria-practices/#alertdialog" target="_blank">alert and message dialog</a> pattern for more on this.</p>
+        <p>Included below are a couple of examples of basic modal dialogs:</p>
+        <html-to-text src="/templates/modal-dialog-example.html"></html-to-text>
+        <p>Note: in the above example role="dialog" is defined on the parent element, and aria-labelledby="dialog1-label" references the h2 element's ID attribute.
+        The h2 element's inner text (in this case "Dialog Header") will be read out by the screen reader when the user initially enters the dialog. The aria-modal attribute
+        has also been set to true to show this is a modal dialog.</p>
+        <html-to-text src="/templates/modal-dialog-example2.html"></html-to-text>
+        <p>In the second example, note the inclusion of <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-describedby" target="_blank">aria-describedby</a>="dialog2-desc". This aria property
+        is similar to aria-labelledby as they both reference other elements to calculate a text alternative, but where a label needs to be concise, a description is intented to provide
+        more verbose information.</p>
+        <p>A note on dialog labeling: let's say the initial example's dialog contained a button that opened the second example's dialog as another modal dialog. It is important
+        that each dialog's aria-labelledby is referenced by a unique element id. If the second dialog's aria-labelledby property was set to "dialog1-label" the screen reader
+        would read the initial dialog's header, even if it was hidden.</p>
+        <p>You can view more <a href="https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/dialog.html#" target="_blank">implemented examples</a>.</p>
     </section>
     <section>
         <h2>Keyboard Interaction</h2>
+        <ul>
+            <li>When a dialog opens, focus usually moves to the first element inside the dialog.
+                <ul>
+                    <li>Focus placement depends on the nature and size of the content.</li>
+                    <li>
+                        If content is large enough that focusing the first interactive element could cause the beginning
+                        of the content to scroll out of view, it is advisable to add tabindex="-1" to a static element at
+                        top of the dialog, i.e. dialog title or first paragraph.
+                    </li>
+                    <li>
+                        If a dialog is the last step in a process that is not easily reversible, such as deleting data
+                        or completing a financial transaction, it may be advisable to set focus on the least destructive
+                        action, especially if undoing the action is difficult or impossible.
+                    </li>
+                    <li>
+                        If a dialog is limited to interactions that either provide additional information or continue processing,
+                        it may be advisable to set focus to the element that is likely to be most frequently used, such as an "OK"
+                        or "Continue" button.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Tab:
+                <ul>
+                    <li>Moves focus to the next tabbable element inside the dialog.</li>
+                    <li>If focus is on the last tabbable element, moves focus to the first tabbable element inside the dialog</li>
+                </ul>
+            </li>
+            <li>
+                Shift + Tab:
+                <ul>
+                    <li>Moves focus to the previous tabbable element inside the dialog</li>
+                    <li>If focus is on the first tabbable element, moves focus to the last tabbable element inside the dialog</li>
+                </ul>
+            </li>
+            <li>Escape: closes the dialog.</li>
+        </ul>
     </section>
     <section>
         <h2>WAI-ARIA Roles, States & Properties</h2>
+        <ul>
+            <li>The element that serves as the dialog container has <a href="https://www.w3.org/TR/wai-aria-1.1/#dialog" target="_blank">role="dialog"</a></li>
+            <li>All elements required to operate the dialog are descendants of the element that has role dialog</li>
+            <li>The dialog container element has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-modal" target="_blank">aria-modal</a>="true"</li>
+            <li>
+                The dialog has either:
+                <ul>
+                    <li>A value set for the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby" target="_blank">aria-labelledby</a> property that refers to a visible dialog title</li>
+                    <li>A label specified by <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label" target="_blank">aria-label</a></li>
+                </ul>
+            </li>
+            <li>
+                Optionally, the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-describedby" target="_blank">aria-describedby</a> property is set on the element with the dialog role
+                to indicate which element(s) in the dialog contain content that describes the primary purpose or message of the dialog.
+                Specifying descriptive elements enables screen readers to announce the description along with the dialog title and initially focused
+                element when the dialog opens.
+            </li>
+        </ul>
     </section>
     <section>
         <h2 id="references">References</h2>
         <nav aria-labelledby="references">
             <ul>
-
+                <li>Visit the <a href="https://www.w3.org/TR/wai-aria-practices/#dialog_modal" target="_blank">WAI-ARIA Authoring Practices 1.1</a> to read up more on implementing accessible dialogs.</li>
             </ul>
         </nav>
     </section>
@@ -34,7 +102,8 @@
         <h2 id="examples">Examples</h2>
         <nav aria-labelledby="examples">
             <ul>
-
+                <li><a href="https://github.com/caperaven/crs-accessibility-examples/blob/master/templates/modal-dialog-example.html" target="_blank">modal dialog example 1</a></li>
+                <li><a href="https://github.com/caperaven/crs-accessibility-examples/blob/master/templates/modal-dialog-example2.html" target="_blank">modal dialog example 2</a></li>
             </ul>
         </nav>
     </section>
