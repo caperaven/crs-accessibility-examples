@@ -41,6 +41,12 @@
       "html-only": true
     },
     {
+      "title": "Dialogs",
+      "hash": "#dialogs",
+      "view": "dialogs",
+      "html-only": true
+    },
+    {
       "title": "404",
       "hash": "#404",
       "view": "404",
