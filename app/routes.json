@@ -35,6 +35,12 @@
       "html-only": true
     },
     {
+      "title": "Navigation",
+      "hash": "#navigation",
+      "view": "navigation",
+      "html-only": true
+    },
+    {
       "title": "404",
       "hash": "#404",
       "view": "404",
