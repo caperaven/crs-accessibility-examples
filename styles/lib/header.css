@@ -13,3 +13,7 @@ header button {
     border: none;
     background:  transparent;
 }
+
+header button:focus {
+    border: 1px solid #101010;
+}
