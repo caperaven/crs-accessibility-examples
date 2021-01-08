@@ -17,12 +17,6 @@
       "html-only": true
     },
     {
-      "title": "Toolbars",
-      "hash": "#toolbars",
-      "view": "toolbars",
-      "html-only": true
-    },
-    {
       "title": "Buttons",
       "hash": "#buttons",
       "view": "buttons",
@@ -32,6 +26,18 @@
       "title": "Lists",
       "hash": "#lists",
       "view": "lists",
+      "html-only": true
+    },
+    {
+      "title": "Toolbars",
+      "hash": "#toolbars",
+      "view": "toolbars",
+      "html-only": true
+    },
+    {
+      "title": "Menus",
+      "hash": "#menus",
+      "view": "menus",
       "html-only": true
     },
     {
