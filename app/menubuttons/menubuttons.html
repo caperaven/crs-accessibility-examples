@@ -1,0 +1,78 @@
+<article>
+    <section>
+        <h2>How to define Menu Buttons</h2>
+        <p>
+            A <a href="https://www.w3.org/TR/wai-aria-practices/#menubutton" target="_blank">menu button</a> is a <a href="https://www.w3.org/TR/wai-aria-practices/#button" target="_blank">button</a> that opens a <a href="https://www.w3.org/TR/wai-aria-practices/#menu" target="_blank">menu</a>
+        </p>
+        <html-to-text src="/templates/menu-button-example.html"></html-to-text>
+        <p>
+            In the example above there is a menubutton controlling a dropdown menu of options. Because we are focused on the button itself, it is not crucial to know the function of this menu.
+            For an overview of accessible menu and menu bars please refer to the <a href="https://www.w3.org/TR/wai-aria-practices/#menu" target="_blank">WAI-ARIA Authoring Practices 1.1</a>.
+            The button with id="menubutton" has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup" target="_blank">aria-haspopup</a> set to true, which indicates the button opens a menu.
+            The <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-controls" target="_blank">aria-controls</a> attribute points to the id reference of the menu the button is controlling, in this case it is set to "menu1".
+            Finally the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-expanded" target="_blank">aria-expanded</a> attributes indicates whether the menu is shown or hidden.
+        </p>
+    </section>
+    <section>
+        <h2>Keyboard Interaction</h2>
+        <ul>
+            <li>
+                With focus on the button:
+                <ul>
+                    <li>Enter: Opens the menu and places focus on the first menu item</li>
+                    <li>Space: Opens the menu and places focus on the first menu item</li>
+                    <li>(Optional) Down Arrow: Opens the menu and moves focus to the first menu item</li>
+                    <li>(Optional) Up Arrow: Opens the menu and moves focus to the last menu item</li>
+                </ul>
+            </li>
+            <li>
+                The keyboard behaviours needed after the menu is open are described in <a href="https://www.w3.org/TR/wai-aria-practices/#menu" target="_blank">3.15 Menu or Menu Bar</a>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>WAI-ARIA Roles, States & Properties</h2>
+        <ul>
+            <li>
+                The element that opens the menu has role <a href="https://www.w3.org/TR/wai-aria-1.1/#button" target="_blank">button</a>
+            </li>
+            <li>
+                The element with role button has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-haspopup" target="_blank">aria-haspopup</a> set to either menu or true
+            </li>
+            <li>
+                When the menu is displayed, the element with role button has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-expanded" target="_blank">aria-expanded</a> set to true. When the menu
+                is hidden, it is recommended that aria-expanded is not present. If aria-expanded is specified when the menu is hidden,
+                it is set to false.
+            </li>
+            <li>
+                The element that contains the menu items displayed by activating the button has role <a href="https://www.w3.org/TR/wai-aria-1.1/#menu" target="_blank">menu</a>
+            </li>
+            <li>
+                Optionally, the element with role button has a value specified for <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-controls" target="_blank">aria-controls</a>
+                that refers to the element with role menu
+            </li>
+            <li>
+                Additional roles, states, and properties needed for the menu element are described in <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-controls" target="_blank">3.15 Menu or Menu Bar</a>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>Reference</h2>
+        <nav aria-labelledby="references">
+            <ul>
+                <li>Visit the <a href="https://www.w3.org/TR/wai-aria-practices/#menubutton" target="_blank">WAI-ARIA Authoring Practices 1.1</a> to read up more on implementing accessible menu buttons.</li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <h2>Examples</h2>
+        <nav aria-labelledby="examples">
+            <ul>
+                <li><a href="" target="_blank">Menu Button Example</a></li>
+                <li><a href="https://www.w3.org/TR/wai-aria-practices/examples/menu-button/menu-button-links.html" target="_blank">Navigation Menu Button Example</a></li>
+                <li><a href="https://www.w3.org/TR/wai-aria-practices/examples/menu-button/menu-button-actions.html" target="_blank">Actions Menu Button Using element.focus()</a></li>
+                <li><a href="https://www.w3.org/TR/wai-aria-practices/examples/menu-button/menu-button-actions-active-descendant.html" target="_blank">Actions Menu Button Example Using aria-activedescendant</a></li>
+            </ul>
+        </nav>
+    </section>
+</article>

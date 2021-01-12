@@ -17,9 +17,21 @@
       "html-only": true
     },
     {
+      "title": "Landmarks",
+      "hash": "#landmarks",
+      "view": "landmarks",
+      "html-only": true
+    },
+    {
       "title": "Buttons",
       "hash": "#buttons",
       "view": "buttons",
+      "html-only": true
+    },
+    {
+      "title": "Menu Buttons",
+      "hash": "#menubuttons",
+      "view": "menubuttons",
       "html-only": true
     },
     {

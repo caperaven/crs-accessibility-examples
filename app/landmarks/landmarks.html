@@ -1,0 +1,97 @@
+<article>
+    <section>
+        <h2>What are Landmarks</h2>
+        <p>
+            Using appropriate landmarks help assistive technology understand the overall structure of a web page.
+            Using proper HTML elements like headers, navs, and asides are useful to screen readers. They can collect
+            the landmarks and tell the user what's available on the page. It helps for navigation purposes as the user
+            can jump straight to directly to a footer element, rather that having to navigate to it via tabbing.
+        </p>
+    </section>
+    <section>
+        <h2>Article</h2>
+        <p>
+            The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article" target="_blank">article</a> element represents a self-contained composition in a document, page, application, or site,
+            which is intended to be independently distributable or reusable. A given document can have multiple articles in it, with one or more sections within each article.
+            They are independent in the sense that they could stand alone. However the element is still associated with its ancestors.
+        </p>
+        <p>
+            They implicitly have the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article" target="_blank">article role</a>. NOTE: an article is not a navigational landmark,
+            but may be nested to form a discussion where assistive technologies could pay attention to article nesting to assist the user in following the discussion.
+        </p>
+        <p>
+            Please refer to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article" target="_blank">MDN's article definition</a> for a further breakdown of the element.
+        </p>
+    </section>
+    <section>
+        <h2>Aside</h2>
+        <p>
+            The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside" target="_blank">aside element</a> represents content is only indirectly related to the document's main content.
+            They are frequently presented as sidebars or call-out boxes.
+        </p>
+        <p>
+            They implicitly have the <a href="https://www.w3.org/TR/wai-aria/#complementary" target="_blank">complementary ARIA role</a> applied, which indicates that contained content is relevant to the main content.
+        </p>
+    </section>
+    <section>
+        <h2>Footer</h2>
+        <p>
+            The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer" target="_blank">footer</a> element represents a footer for its nearest sectioning content or sectioning root element.
+        </p>
+        <p>
+            They implicitly have the <a href="https://www.w3.org/TR/wai-aria/#contentinfo" target="_blank">contentinfo ARIA role</a> when in the context of the body element.
+            The contentinfo role specifies a large perceivable region that contains information about the parent document.
+            NOTE: The footer element is not a contentinfo landmark when it is a descendant of the following HTML sectioning elements:
+            <ul>
+                <li>Article</li>
+                <li>Aside</li>
+                <li>Main</li>
+                <li>Nav</li>
+                <li>section</li>
+            </ul>
+        </p>
+        <p>
+            NOTE: W3 recommends only assigning one element with the contentinfo role within any document or application.
+            However, because document and application element can be nested in the DOM, they may have multiple contentinfo elements as DOM descendants.
+            This is assuming each of those are associated with different document nodes, either by a DOM nesting, or by use of the <a href="https://www.w3.org/TR/wai-aria/#aria-owns" target="_blank">aria-owns attribute</a>
+        </p>
+    </section>
+    <section>
+        <h2>Form</h2>
+        <p>
+
+        </p>
+    </section>
+    <section>
+        <h2>Header</h2>
+        <p>
+
+        </p>
+    </section>
+    <section>
+        <h2>Main</h2>
+        <p>
+
+        </p>
+    </section>
+    <section>
+        <h2>Nav</h2>
+        <p>
+
+        </p>
+    </section>
+    <section>
+        <h2>Section</h2>
+        <p>
+
+        </p>
+    </section>
+    <section>
+        <h2>References</h2>
+        <ul>
+            <li>
+                Visit W3's <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/index.html" target="_blank">Aria Landmarks Example</a> for a detailed explanation on landmarks and examples of use
+            </li>
+        </ul>
+    </section>
+</article>
