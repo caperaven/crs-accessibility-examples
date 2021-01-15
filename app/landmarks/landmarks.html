@@ -59,31 +59,85 @@
     <section>
         <h2>Form</h2>
         <p>
-
+            The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form" target="_blank">form</a> element represents a document section containing interactive controls for submitting information.
+            They have the implicit ARIA role <a href="https://www.w3.org/TR/wai-aria/#form" target="_blank">form</a> if the form has an accessible name, otherwise no corresponding role.
+        </p>
+        <p>
+            The permitted ARIA roles are as follows:
+            <ul>
+                <li><a href="https://www.w3.org/TR/wai-aria/#search" target="_blank">Search</a>: which is a landmark region that contains a collection of items and objects that combine to create a search facility.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#none" target="_blank">None</a>: which specifies an element whose implicit native role semantics will not be mapped to the accessibility API</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#presentation">Presentation</a>: relates to an element which is used to change the look of the page but does not have all the functional interactive,
+                    or structural relevance implied by the element, or may be used to provide for an accessible fallback in older browsers which don't support WAI-ARIA</li>
+            </ul>
         </p>
     </section>
     <section>
         <h2>Header</h2>
         <p>
-
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header" target="_blank">Header</a> elements represent introductory content.
+            It may contain some heading elements but can also include logs, search forms, author names, etc.
+            They implicitly have the role <a href="https://www.w3.org/TR/wai-aria/#banner" target="_blank">banner</a>, which describes a region that contains mostly site-oriented content, rather than page specific content.
+            When it is a descendant of an article, aside, main, nav, or section element, or an element with role=article, complementary, main,
+            navigation or region then it has <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role" target="_blank">no corresponding role</a>.
+        </p>
+        <p>
+            The permitted ARIA roles are as follows:
+            <ul>
+                <li><a href="https://www.w3.org/TR/wai-aria/#group" target="_blank">Group</a>: Which describes a set of user interface objects which are not intended to be included in a page summary or a table of contents by assistive technologies</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#none" target="_blank">None</a>: which specifies an element whose implicit native role semantics will not be mapped to the accessibility API</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#presentation">Presentation</a>: relates to an element which is used to change the look of the page but does not have all the functional interactive,
+                or structural relevance implied by the element, or may be used to provide for an accessible fallback in older browsers which don't support WAI-ARIA</li>
+            </ul>
         </p>
     </section>
     <section>
         <h2>Main</h2>
         <p>
-
+            The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main" target="_blank">main</a> content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application.
+            It has an implicit ARIA role of <a href="https://www.w3.org/TR/wai-aria/#main" target="_blank">main</a> which marks the content that is directly related to or expands upon the central topic of the document.
+            It has role attributes permitted.
         </p>
     </section>
     <section>
         <h2>Nav</h2>
         <p>
-
+            The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav" target="_blank">nav</a> element represents a section of a page whose purpose is to provide navigation links,
+            either within the current document or to other documents.
+            It has the implicit role of <a href="https://www.w3.org/TR/wai-aria/#navigation" target="_blank">navigation</a> which describes a collection of navigational elements for navigating the document or related documents.
+            It has role attributes permitted.
         </p>
     </section>
     <section>
         <h2>Section</h2>
         <p>
-
+            The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section" target="_blank">section</a> element represents a standalone section - which doesn't have a more specific semantic element to represent it - contained within an HTML document.
+            They have the implicit ARIA role of <a href="https://www.w3.org/TR/wai-aria/#region" target="_blank">region</a> if the element has an accessible name, otherwise <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role" target="_blank">no corresponding role</a>
+        </p>
+        <p>
+            Sections have the following permitted ARIA roles:
+            <ul>
+                <li><a href="https://www.w3.org/TR/wai-aria/#alert" target="_blank">Alert</a>: A type of <a href="https://www.w3.org/TR/wai-aria/#dfn-live-region" target="_blank">live region</a> with important and usually time-sensitive information</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#alertdialog" target="_blank">Alertdialog</a>: A type of dialog that contains an alert message, where initial focus goes to an element with the dialog</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#application" target="_blank">Application</a>: A structure containing one or more focusable elements requiring user input, such as keyboard or gesture events, that don't follow a standard interaction pattern supported by a <a href="https://www.w3.org/TR/wai-aria/#widget" target="_blank">widget role</a></li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#banner" target="_blank">Banner</a>: A region that contains mostly site-oriented content, rather than page-specific content</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#complementary" target="_blank">Complementary</a>: A support section of the document, designed to be complementary to the main content at a similar level in the DOM hierarchy, but remains meaningful when separated from the main content.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#contentinfo" target="_blank">Contentinfo</a>: A large perceivable region that contains information about the parent document.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#dialog" target="_blank">Dialog</a>: A dialog is a descendant window of the primary window of a web application.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#document" target="_blank">Document</a>: An element containing content that assistive technology users may want to browse in a reading mode.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#feed" target="_blank">Feed</a>: A scrollable <a href="https://www.w3.org/TR/wai-aria/#list" target="_blank">list</a> of <a href="https://www.w3.org/TR/wai-aria/#article" target="_blank">articles</a> where scrolling may cause articles to be added to or removed from either end of the list.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#log" target="_blank">Log</a>: A type of <a href="https://www.w3.org/TR/wai-aria/#dfn-live-region" target="_blank">live region</a> where new information is added in a meaningful order and old information may disappear.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#main" target="_blank">Main</a>: The main content of a document</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#marquee" target="_blank">Marquee</a>: A type of <a href="https://www.w3.org/TR/wai-aria/#dfn-live-region" target="_blank">live region</a> where non-essential information changes frequently</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#navigation" target="_blank">Navigation</a>: A collection of navigational elements for navigating the document or related documents.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#none" target="_blank">None</a>: which specifies an element whose implicit native role semantics will not be mapped to the accessibility API</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#note" target="_blank">Note</a>: A section whose content is parenthetic or ancillary to the main content of the resource.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#presentation">Presentation</a>: relates to an element which is used to change the look of the page but does not have all the functional interactive,
+                    or structural relevance implied by the element, or may be used to provide for an accessible fallback in older browsers which don't support WAI-ARIA</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#search" target="_blank">Search</a>: A <a href="https://www.w3.org/TR/wai-aria/#landmark" target="_blank">landmark</a> region that contains a collection of items and objects that combine to create a facility.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#status" target="_blank">Status</a>: A type of <a href="https://www.w3.org/TR/wai-aria/#dfn-live-region" target="_blank">live region</a> whose content is advisory information for the user but is not important enough to justify an <a href="https://www.w3.org/TR/wai-aria/#alert" target="_blank">alert</a>.</li>
+                <li><a href="https://www.w3.org/TR/wai-aria/#tabpanel" target="_blank">Tabpanel</a>: A container for the resources associated with a <a href="https://www.w3.org/TR/wai-aria/#tab" target="_blank">tab</a>, where each tab is contained within a <a href="https://www.w3.org/TR/wai-aria/#tablist" target="_blank">tablist</a></li>
+            </ul>
         </p>
     </section>
     <section>
@@ -91,6 +145,9 @@
         <ul>
             <li>
                 Visit W3's <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/index.html" target="_blank">Aria Landmarks Example</a> for a detailed explanation on landmarks and examples of use
+            </li>
+            <li>
+                Visit W3's <a href="https://www.w3.org/TR/wai-aria/" target="_blank">WAI-ARIA 1.1 Documentation</a> for a breakdown of the roles, as well as supported states and properties referenced above
             </li>
         </ul>
     </section>
