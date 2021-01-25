@@ -1,0 +1,74 @@
+<article>
+    <section>
+        <h2>How to define dialogs</h2>
+        <p>
+            An <a href="https://www.w3.org/TR/wai-aria-practices/#alert" target="_blank">alert</a> is an element that displays a brief, important
+            message in a way that attracts the user's attention without interrupting  the user's task. Dynamically rendered alerts are automatically
+            announced by most screen readers. NOTE: it is important that screen readers do no inform the user of alerts that are present on the page before
+            page load completes.
+        </p>
+        <p>
+            It is crucial that alerts do not affect keyboard focus in order to maintain the user's ability to continue working. The <a href="https://www.w3.org/TR/wai-aria-practices/#alertdialog" target="_blank">alert dialog</a>
+            designed for situations where interrupting work flow is necessary.
+        </p>
+        <p>
+            Avoid designing alerts that disappear automatically. An alert that disappears too quickly can lead to failure to meet
+            <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-no-exceptions.html" target="_blank">WCAG 2.0 success criterion 2.2.3</a>.
+            Another critical design consideration is the frequency of interruption caused by alerts. Frequent interruptions inhibit
+            usability for people with visual and cognitive disabilities, which makes meeting the requirements of <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-postponed.html" target="_blank">WCAG 2.0 success criterion 2.2.4</a> more difficult
+        </p>
+        <html-to-text src="/templates/alert.html"></html-to-text>
+        <p>
+            Looking at the example above:
+            <ul>
+                <li>The button triggers the corresponding alert.</li>
+                <li>The alert message is wrapped by a parent container with a number of aria related attributes:
+                    <ul>
+                        <li>
+                            It has a <a href="https://www.w3.org/TR/wai-aria/#alert" target="_blank">role of alert</a>, which describes a type of <a href="https://www.w3.org/TR/wai-aria/#dfn-live-region" target="_blank">live region</a> with important,
+                            usually time-sensitive, information.
+                        </li>
+                        <li>
+                            The <a href="https://www.w3.org/TR/wai-aria/#aria-live" target="_blank">aria-live property</a> indicates that an element will be updated, and describes the types of updates the user agents, assistive technologies, and user can expect from the live.
+                            When regions are specified as assertive, assistive technologies will immediately notify the user, and could potentially clear the speech queue of previous updates.
+                        </li>
+                        <li>
+                            The <a href="https://www.w3.org/TR/wai-aria/#aria-atomic" target="_blank">aria-atomic property</a> indicates whether assistive technologies will present all, or only parts of, the changed region.
+                            If aria-atomic is set to false, assistive technologies will stop searching up the ancestor chain and present only the changed node to the user.
+                            IF aria-atomic is set to true, assistive technologies will present the entire contents of the element, including the author-defined live region if one exists.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <h2>Keyboard Interaction</h2>
+        <ul>
+            <li>An alert does not require any keyboard interaction.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>WAI-ARIA Roles, States & Properties</h2>
+        <ul>
+            <li>The widget as a role of <a href="https://www.w3.org/TR/wai-aria-1.1/#alert" target="_blank">alert</a>, which describes a type of <a href="https://www.w3.org/TR/wai-aria-1.1/#dfn-live-region" target="_blank">live region</a> with important, usually time-sensitive, information.</li>
+        </ul>
+    </section>
+    <section>
+        <h2 id="references">References</h2>
+        <nav aria-labelledby="references">
+            <ul>
+                <li>Visit the <a href="https://www.w3.org/TR/wai-aria-practices/#alert" target="_blank">WAI-ARIA Authoring Practices 1.1</a> to read up more on implementing accessible alerts.</li>
+                <li>For more information on the alert ARIA role, please refer to <a href="https://www.w3.org/TR/wai-aria-1.1/#alert" target="_blank">Accessible RIch Internet Applications (WAI-ARIA) 1.1 Guidelines</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <h2 id="examples">Examples</h2>
+        <nav aria-labelledby="examples">
+            <ul>
+                <li><a href="https://www.w3.org/TR/wai-aria-practices/examples/alert/alert.html">Implemented Alert Example</a></li>
+            </ul>
+        </nav>
+    </section>
+</article>
