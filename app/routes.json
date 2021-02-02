@@ -47,6 +47,12 @@
       "html-only": true
     },
     {
+      "title": "Alert Dialogs",
+      "hash": "#alertdialogs",
+      "view": "alertdialogs",
+      "html-only": true
+    },
+    {
       "title": "Toolbars",
       "hash": "#toolbars",
       "view": "toolbars",

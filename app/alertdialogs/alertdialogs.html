@@ -1,0 +1,80 @@
+<article>
+    <section>
+        <h2>How to define Alert Dialogs</h2>
+        <p>
+            An alert dialog is a type of dialog that interrupts the user's workflow to communicate an important message
+            acquire a response, e.g. action confirmation prompts, error message confirmations. The <a href="https://www.w3.org/TR/wai-aria-1.1/#alertdialog" target="_blank">alertdialog role</a>
+            enables assistive technologies and browsers to distinguish alert dialogs from other dialogs so they have the option of giving alert dialogs special treatment i.e. playing a system alert sound.
+        </p>
+        <html-to-text src="/templates/alert-dialog.html"></html-to-text>
+        <p>
+            Looking at the example above:
+            <ul>
+                <li>
+                    The parent container holding the contents and any action elements such as buttons has the attribute
+                    <a href="https://www.w3.org/TR/wai-aria/#alertdialog" target="_blank">role="alertdialog"</a>. This
+                    indicates a type of dialog that contains an alert message, where the initial focus goes to an element
+                    within the dialog.
+                </li>
+                <li>
+                    The <a href="https://www.w3.org/TR/wai-aria/#aria-modal" target="_blank">aria-modal attribute</a> is set to true,
+                    indicating the element is displayed as a modal.
+                </li>
+                <li>
+                    The <a href="https://www.w3.org/TR/wai-aria/#aria-labelledby" target="_blank">alert-labelledby attribute</a> is pointing to the h2 with id="dialog_label"
+                    which is used by screen readers to provide a usable name to the user.
+                </li>
+                <li>
+                    The <a href="https://www.w3.org/TR/wai-aria/#aria-describedby" target="_blank">aria-describedby attribute</a> is set to the div's id="dialog_desc" which contains a paragraph element describing the alert dialog.
+                </li>
+                <li>
+                    NOTE: The last button under the div with id="dialog_actions" has the <a href="https://www.w3.org/TR/wai-aria/#aria-controls" target="_blank">attribute aria-controls</a>
+                    set to "memo_textarea". This attribute identifies the element(or elements) whose contents or presence are controlled by the current element. In this case it is pointing
+                    to a memo input which is not displayed in this example, but will have some effect on the input i.e. clearing the contents.
+                </li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <h2>Keyboard Interaction</h2>
+        <ul>
+            <li>Refer to the keyboard interaction section under "Dialogs" of this Web Accessibility Examples guide.</li>
+            <li>Alternatively you can review <a href="https://www.w3.org/TR/wai-aria-practices/#dialog_modal" target="_blank">WAI-ARIA Authoring Practices documentation</a> on dialogs to see the keyboard interaction required</li>
+        </ul>
+    </section>
+    <section>
+        <h2>WAI-ARIA Roles, States & Properties</h2>
+        <ul>
+            <li>
+                The element that contains all elements of the dialog, including the alert message and any dialog buttons, has <a href="https://www.w3.org/TR/wai-aria-1.1/#alertdialog" target="_blank">aria role alertdialog</a>
+            </li>
+            <li>
+                The element with role alertdialog has either:
+                <ul>
+                    <li>A value for <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby" target="_blank">aria-labelledby</a> that refers to the element containing the title of the dialog if the dialog has a visible label</li>
+                    <li>A value for <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label" target="_blank">aria-label</a> if the dialog does not have a visible label</li>
+                </ul>
+            </li>
+            <li>
+                The element with role alertdialog has a value set for <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-describedby" target="_blank">aria-describedby</a> that refers to the element containing the alert message
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2 id="references">References</h2>
+        <nav aria-labelledby="references">
+            <ul>
+                <li>Visit the <a href="https://www.w3.org/TR/wai-aria-practices/#alertdialog" target="_blank">WAI-ARIA Authoring Practices 1.1</a> to read up more on implementing accessible alert dialogs.</li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <h2 id="examples">Examples</h2>
+        <nav aria-labelledby="examples">
+            <ul>
+                <li><a href="" target="_blank">Alert Dialog Example</a> as shown above.</li>
+                <li>Implemented <a href="https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/alertdialog.html" target="_blank">Alert Dialog Example</a></li>
+            </ul>
+        </nav>
+    </section>
+</article>
