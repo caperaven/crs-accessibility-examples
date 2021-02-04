@@ -1,0 +1,197 @@
+<article>
+    <section>
+        <h2>How to define Listboxes</h2>
+        <p>
+            A <a href="https://www.w3.org/TR/wai-aria/#listbox" target="_blank">listbox</a> widget represents a list of options and allows the user to select one (single-select listbox)
+            or more (mulit-select listbox) options.
+        </p>
+        <p>
+            When screen readers present a listbox, they may render the name, state and position of each item. The name of
+            an option is a string calculated by the browser, typically from the contents of the option element.
+            The name does not contain any semantic info, thus if an option contains a semantic element i.e. heading,
+            screen reader users will not have access to the semantics. Because of these traits, the listbox widget does
+            not provide an accessible way to present a list of interactive elements such as links, buttons or checkboxes.
+            To present a list of interactive elements, see the <a href="https://www.w3.org/TR/wai-aria-practices/#grid" target="_blank">grid pattern</a>.
+        </p>
+        <p>
+            Avoid using very long option names to ensure understandability and perceivability for screen reader users.
+            The entire name is spoken as single unit of speech when the option is read. When too much ino is spoken as a
+            result of a single key press, it is difficult to understand. Sets of options where each option name starts with the same word or phrase can also significantly degrade usability
+            for keyboard and screen reader users.
+        </p>
+        <p>Basic single-select listbox example:</p>
+        <html-to-text src="/templates/listbox-example.html"></html-to-text>
+        <p>
+            Looking at the above exmaple:
+            <ul>
+                <li>
+                    The containing unorder list component has <a href="https://www.w3.org/TR/wai-aria/#listbox" target="_blank">role="listbox"</a> indicating a widget
+                    that allows the user to select one (or more items) from a list of choices. In this case we are looking at a single-select listbox.
+                </li>
+                <li>
+                    The ul element is labelled using <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label" target="_blank">aria-label</a> attribute.
+                </li>
+                <li>
+                    The <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-activedescendant" target="_blank">aria-activedescendant</a> property identifies the currently active element when DOM focus is on a parent element. It provides
+                    an alternative method of managing focus for interactive elements that may contain multiple focusable descendants. Instead of moving DOM focus among
+                    descendant elements, authors may set DOM focus on elements that support aria-activedescendant and then use the property to refer to the
+                    element that is active. In this case, DOM focus stays on the ul element and the property points to the id which is the first li element.
+                </li>
+                <li>
+                    The child li elements all have <a href="https://www.w3.org/TR/wai-aria-1.1/#option" target="_blank">role="option"</a> indicating a selectable item in a <a href="https://www.w3.org/TR/wai-aria-1.1/#select" target="_blank">select</a> list
+                </li>
+                <li>
+                    The first list item has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-selected" target="_blank">aria-selected</a> set to true, indicating the current "selected" state of the item.
+                </li>
+                <li>
+                    The first list item also has a class attribute set to "focused" which will control the styling of the currently selected element, and will update when a new item is selected.
+                </li>
+            </ul>
+            For more implementations of listboxes, please refer to the examples at the button of this page.
+        </p>
+    </section>
+    <section>
+        <h2>Keyboard Interaction</h2>
+        <p>For a vertically oriented listbox:</p>
+        <ul>
+            <li>
+                When a single-select listbox receives focus:
+                <ul>
+                    <li>If none of the options are selected before the listbox receives focus, the first option receives focus. Optionally the first option may be automatically selected</li>
+                    <li>If an option is slected before the lstibox receives focus, focus is set on the selected option</li>
+                </ul>
+            </li>
+            <li>
+                When a multi-select listbox receives focus:
+                <ul>
+                    <li>If none of the options are selected before the list receives focus, focus is set on the first option and the is no automatic change in selection state.</li>
+                    <li>If one or more options are selected before the listbox receives focus, focus is set on the first option in the list that is selected.</li>
+                </ul>
+            </li>
+            <li>
+                Down Arrow: Moves focus to the next option. Optionally, in a single-select listbox, selection may also move with focus.
+            </li>
+            <li>
+                Up Arrow: Moves focus to the previous option. Optionally, in a single-select listbox, selection may also move with focus.
+            </li>
+            <li>
+                Home (optional): Moves focus to the next option. Optionally, in a single-selected listbox, selection may also move with focus.
+                Supporting this key is strongly recommended for lists with more than five options
+            </li>
+            <li>
+                End (optional): Moves focus to last option. Optionally, in a single-select listbox, selection may also move with focus.
+                Supporting this key is strongly recommended for lists with more than five options
+            </li>
+            <li>
+                <a href="https://doc.dynamicweb.com/documentation-9/how-tos/general/implementing-typeahead-search" target="_blank">Type-ahead</a> is recommended for al listboxes, especially those with more than seven options:
+                <ul>
+                    <li>Type a character: focus moves to the next item with a name that starts with the typed character</li>
+                    <li>Type multiple characters in rapid succession: focus moves tot the next item with a name that starts with the string of characters types</li>
+                </ul>
+            </li>
+            <li>
+                Multiple Selection:
+                <ul>
+                    <li>
+                        There are two interaction models to support multiple selection:
+                        <ul>
+                            <li>(Recommended) A model that does not require the user to hold a modifier key, i.e. shift or control, while navigating the list</li>
+                            <li>A model that does require modifier keys to be help while navigating in order to avoid losing selection states</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Recommended Selection Model - holding modifier keys is not necessary:
+                        <ul>
+                            <li>Space: changes the selection state of the focused option</li>
+                            <li>Shift + Down Arrow (optional): Moves focus to and toggles the selected state of the next option</li>
+                            <li>Shift + Up Arrow (optional): Moves focus to and toggles the selected state of the previous option</li>
+                            <li>Shift + Space (optional): Selects the contiguous items from the most recently selected item to the focused item</li>
+                            <li>Control + Shift + Home (optional): Selects the focused option and all options up to the first option. Optionally moves focus to the first option</li>
+                            <li>Control + Shift + End (optional): Selects the focused option and all options down to the last option. Optionally moves focus to the last option</li>
+                            <li>Control + A (optional): Selects all options in the list. Optionally, if all options are selected, it may also unselect all options</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Alternative selection model - moving focus without holding a Shift or Control modifier un-selects all selected nodes except the focused node:
+                        <ul>
+                            <li>Shift + Down Arrow: Moves focus to and toggles the selection state of the next option</li>
+                            <li>Shift + Up Arrow:  Moves focus to and toggles the selection state of the previous option</li>
+                            <li>Control + down Arrow: Moves focus to the next option without changing its selection state.</li>
+                            <li>Control + up Arrow: Moves focus to the previous option without changing its selection state.</li>
+                            <li>Control + Space: Changes the selection state of the focused option.</li>
+                            <li>Shift + Space (optional): Selects contiguous items from the most recently selected item to the focused item</li>
+                            <li>Control + Shift + Home (Optional): Selects the focused option and all options up to the first option. Optionally, moves focus to the first option</li>
+                            <li>Control + Shift + End (optional): Selects the focused option and all option down to the last option. Optionally, moves focus to the last option</li>
+                            <li>Control + A (Optional): Selects all options in the list. Optionally, if all options are selected, it may also unselect all options.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>WAI-ARIA Roles, States & Properties</h2>
+        <ul>
+            <li>
+                An element that contains or owns all the listbox options has <a href="https://www.w3.org/TR/wai-aria-1.1/#listbox" target="_blank">role listbox</a>
+            </li>
+            <li>
+                Each option in the listbox has <a href="https://www.w3.org/TR/wai-aria-1.1/#option" target="_blank">role option</a> and is a DOM descendant of the element with role listbox or is referenced by
+                an <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-owns" target="_blank">aria-owns property</a> on the listbox
+            </li>
+            <li>
+                If the listbox is not part of another widget, then it has a visible label referenced by <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby" target="_blank">aria-labelledby</a> on the element
+                with role listbox.
+            </li>
+            <li>
+                In a single-select listbox, the selected option has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-selected" target="_blank">aria-selected</a> set to true
+            </li>
+            <li>
+                If the listbox supports multi-select:
+                <ul>
+                    <li>
+                        The element with role listbox has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-multiselectable" target="_blank">aria-multiselectable</a> set to true
+                    </li>
+                    <li>
+                        ALl selected options have <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-selected" target="_blank">aria-selected</a> set to true
+                    </li>
+                    <li>
+                        All options that are not selected have <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-selected" target="_blank">aria-selected</a> set to false
+                    </li>
+                </ul>
+            </li>
+            <li>
+                If the complete set of available options is not present in the DOM due to dynamic loading as the user scrolls,
+                their <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-setsize" target="_blank">aria-setsize</a> and <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-posinset" target="_blank">aria-posinset</a> attributes are set appropriately
+            </li>
+            <li>
+                If options are arranged horizontally, the element with role listbox has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-orientation" target="_blank">aria-orientation</a> set to horizontal.
+                The default value of aria-orientation for listbox is vertical.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2 id="references">References</h2>
+        <nav aria-labelledby="references">
+            <ul>
+                <li>Visit the <a href="https://www.w3.org/TR/wai-aria-practices/#Listbox" target="_blank">WAI-ARIA Authoring Practices 1.1</a> to read up more on implementing accessible listboxes.</li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <h2 id="examples">Examples</h2>
+        <nav aria-labelledby="examples">
+            <ul>
+                <li>
+                    Implemented listbox examples:
+                    <ul>
+                        <li>Simple <a href="" target="_blank">listbox example</a> as shown above</li>
+                        <li><a href="https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-scrollable.html" target="_blank">Scrollable listbox example</a></li>
+                        <li><a href="https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-collapsible.html" target="_blank">Collapsible dropdown listbox example</a></li>
+                        <li><a href="https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-rearrangeable.html" target="_blank">Two listboxes with re-arrangeable options example</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </section>
+</article>

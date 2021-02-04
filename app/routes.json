@@ -39,6 +39,11 @@
       "hash": "#lists",
       "view": "lists",
       "html-only": true
+    },{
+      "title": "Listboxes",
+      "hash": "#listboxes",
+      "view": "listboxes",
+      "html-only": true
     },
     {
       "title": "Alerts",
