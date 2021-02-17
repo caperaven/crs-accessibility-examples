@@ -1,0 +1,124 @@
+<article>
+    <section>
+        <h2>How to define Listboxes</h2>
+        <p>
+            A slider is an input where the user selects a value from within a given range. They typically have a slider thumb that
+            can be moved along a bar or track to change the value of the slider.
+        </p>
+        <html-to-text src="/templates/slider-example.html"></html-to-text>
+        <p>
+            Looking at the example above:
+            <ul>
+                <li>
+                    The slider element itself is represented by the div with class="slider-widget"
+                </li>
+                <li>
+                    Embedded in the .slider-widget div is a div with class="track" that contains the thumb element users will interact with
+                </li>
+                <li>
+                    The #thumb-red div represents the slider's thumb that controls the amount of red in a colour picker.
+                    <ul>
+                        <li>
+                            It has a <a href="https://www.w3.org/TR/wai-aria-1.1/#slider" target="_blank">role of slider</a> which identifies the element as a slider.
+                            It is set on the div that represents the movable thumb because it is the operable element that represents the slider value.
+                        </li>
+                        <li>
+                            It's tabindex is set to 0 to include the slider thumb in the page tab sequence.
+                        </li>
+                        <li>
+                            The <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemax" target="_blank">aria-valuemax property</a> is set to 255, specifying the maximum value of the slider.
+                        </li>
+                        <li>
+                            The <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemin" target="_blank">aria-valuemin property</a> is set to 0, specifying the minimum value of the slider.
+                        </li>
+                        <li>
+                            The <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuenow" target="_blank">aria-valuenow property</a> is set to the current value of the slider.
+                        </li>
+                        <li>
+                            The <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby" target="_blank">aria-labelledby</a> is used in this case (instead of <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label" target="_blank">aria-label</a>), as a h2 representing the label
+                            of the slider is present and referred to by id.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <h2>Keyboard Interaction</h2>
+        <ul>
+            <li>
+                Right Arrow: Increase the value of the slider by one step
+            </li>
+            <li>
+                Up Arrow: Increase the value of the slider by one step
+            </li>
+            <li>
+                Left Arrow: Decrease the value of the slide by one step.
+            </li>
+            <li>
+                Down Arrow: Decrease the value of the slide by one step.
+            </li>
+            <li>
+                Home: Set the slider to the first allowed value in its range
+            </li>
+            <li>
+                End: Set the slider to the last allowed value in its range
+            </li>
+            <li>
+                Page Up (Optional): Increment the slider by an amount larger than one step change made by Up Arrow
+            </li>
+            <li>
+                Page Down (Optional): Decrement the slider by an amount larger that the step change made by Down Arrow
+            </li>
+        </ul>
+        <p>
+            NOTE: Focus should be placed on the slider's thumb (the visual object that the mouse user would move).
+        </p>
+    </section>
+    <section>
+        <h2>WAI-ARIA Roles, States & Properties</h2>
+        <ul>
+            <li>
+                The element serving as the focusable slider control has role <a href="https://www.w3.org/TR/wai-aria-1.1/#slider" target="_blank">slider</a>
+            </li>
+            <li>
+                The slider element has the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuenow" target="_blank">aria-valuenow</a> property set to a decimal value representing the current value of the slider.
+            </li>
+            <li>
+                The slider element has the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemin" target="_blank">aria-valuemin</a> property set to a decimal value representing the minimum allowed value of the slider
+            </li>
+            <li>
+                The slider element has the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemax" target="_blank">aria-valuemax</a> property set to a decimal value representing the maximum allowed value of the slider
+            </li>
+            <li>
+                If the value of aria-valuenow is not user-friendly, e.g. the dat of the week is represented by a number,
+                the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuetext" target="_blank">aria-valuetext</a> property is set to a string that makes the slider value understandable, e.g., "Monday"
+            </li>
+            <li>
+                If the slider has a visible label, it is reference by <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby" target="_blank">aria-labelledby</a> on the slider element.
+                Otherwise the slider element has a label provided by <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label" target="_blank">aria-label</a>
+            </li>
+            <li>
+                If the slider is vertically oriented, it has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-orientation" target="_blank">aria-orientation</a> set to vertical. The default value of aria-orientation for a slider is horizontal.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2 id="references">References</h2>
+        <nav aria-labelledby="references">
+            <ul>
+                <li>Visit the <a href="https://www.w3.org/TR/wai-aria-practices/#slider" target="_blank">WAI-ARIA Authoring Practices 1.1</a> to read up more on implementing accessible sliders.</li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <h2 id="examples">Examples</h2>
+        <nav aria-labelledby="examples">
+            <ul>
+                <li>Red colour picker <a href="" target="_blank">slider example</a> above</li>
+                <li>Implemented <a href="https://www.w3.org/TR/wai-aria-practices/examples/slider/slider-1.html" target="_blank">horizontal slider examples</a></li>
+                <li>Implemented <a href="https://www.w3.org/TR/wai-aria-practices/examples/slider/slider-2.html" target="_blank">slider examples with aria-orientation and aria-value text</a></li>
+            </ul>
+        </nav>
+    </section>
+</article>

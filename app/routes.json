@@ -82,6 +82,12 @@
       "html-only": true
     },
     {
+      "title": "Sliders",
+      "hash": "#sliders",
+      "view": "sliders",
+      "html-only": true
+    },
+    {
       "title": "404",
       "hash": "#404",
       "view": "404",
