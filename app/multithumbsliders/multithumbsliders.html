@@ -1,0 +1,116 @@
+<article>
+    <section>
+        <h2>How to define Multi-thumb Sliders</h2>
+        <p>
+            A multi-thumb sliders is a <a>slider</a> with two or more thumbs that each set a value in a group of related values.
+            Example: in a product search, a two-thumb slider could be used to set the minimum and maximum price limits to filter the search.
+            In many, two-thumb sliders, the thumbs are not allowed to pass one another, such as when the slider sets the min and max values for
+            a range, i.e. the max value of the thumb that sets the lower end of the range is limited by the current value that sets the upper
+            end of the range and vice versa. However in some multi-thumb sliders, each thumb sets a value that does not depend on the other thumb values.
+        </p>
+        <html-to-text src="/templates/multi-thumb-slider-example.html"></html-to-text>
+        <p>
+            Looking at the example above:
+            <ul>
+                <li>
+                    The components that make up the slider widget are embedded within the .widget-slider div
+                </li>
+                <li>
+                    Note the two .rail-label divs containing the min and max values of the slider at the current moment.
+                    These values will be updated accordingly as the user interacts with the slider's left and right thumbs.
+                </li>
+                <li>
+                    Looking at the #left-slider-thumb and #right-slider-thumb div elements:
+                    <ul>
+                        <Li>
+                            Both elements have the <a href="https://www.w3.org/TR/wai-aria/#slider" target="_blank">slider role</a>
+                            which identifies the element as a slider. It is set on the movable thumb because it is the operable element
+                            that receives focus and represents the slider value.
+                        </Li>
+                        <li>
+                            The tabindex is set to 0 to include the slider thumbs in the page tab sequence
+                        </li>
+                        <li>
+                            The <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemin" target="_blank">aria-valuemin</a> property is used to indicate the minimum allowed value for each of the thumbs.
+                            In this case the right-slider-thumb's minimum value is dependent on the left-slider-thumb's value.
+                        </li>
+                        <li>
+                            The <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemax" target="_blank">aria-valuemax</a> property is used to indicate the maximum allowed value of each of the thumbs.
+                            In this case the left-slider-thumb's maximum value is dependent on the right-slider-thumb's value.
+                        </li>
+                        <li>
+                            The <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuenow" target="_blank">aria-valuenow</a> property is used to indicate the current value of the slider
+                        </li>
+                        <li>
+                            Because the slider is set a filter on price and dealing with currencies, the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuetext" target="_blank">aria-valuetext</a> is used
+                            to indicate the current value of the slider in Rand amounts.
+                        </li>
+                        <li>
+                            Each slider thumb has it's own label set via the <a  href="https://www.w3.org/TR/wai-aria-1.1/#aria-label" target="_blank">aria-label</a> property
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <h2>Keyboard Interaction</h2>
+        <ul>
+            <li>
+                Each thumb is in the page tab sequence (has a tabindex of 0) and have the same keyboard interaction as a <a href="https://www.w3.org/TR/wai-aria-practices/#slider_kbd_interaction" target="_blank">single-thumb slider</a>
+            </li>
+            <li>
+                The tab order remains constant regardless of thumb value and visual position within the slider
+                i.e. if the value of a thumb changes such that it moves past one of the other thumbs, the tab order does not change.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>WAI-ARIA Roles, States & Properties</h2>
+        <ul>
+            <li>
+                Each element serving as a focusable slider thumb has role <a href="https://www.w3.org/TR/wai-aria-1.1/#slider" target="_blank">slider</a>.
+            </li>
+            <li>
+                Each slider element has the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuenow" target="_blank">aria-valuenow</a> property set to a decimal value representing the current value of the slider.
+            </li>
+            <li>
+                Each slider element has the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemin" target="_blank">aria-valuemin</a> property set to a decimal value representing the minimum allowed value of the slider.
+            </li>
+            <li>
+                Each slider element has the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemax" target="_blank">aria-valuemax</a> property set to a decimal value representing the maximum allowed value of the slider.
+            </li>
+            <li>
+                When the range of another slider is dependent on the current value of a slider, the values of the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemin" target="_blank">aria-valuemin</a> or <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemax" target="_blank">aria-valuemax</a>
+                of the dependent sliders are updated when the value changes.
+            </li>
+            <li>
+                If a value of aria-valuenow is not user-friendly i.e. the day of the week is represented by a number, the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuetext" target="_blank">aria-valuetext</a> property
+                is set to a string that makes the slider value understandable e.g. "Monday"
+            </li>
+            <li>
+                If a slider has a visible label, it is referenced by <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby" target="_blank">aria-labelledby</a> on the slider element. Otherwise the slide element has a label provided by <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label" target="_blank">aria-label</a>
+            </li>
+            <li>
+                If a slider is vertically oriented, it has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-orientation" target="_blank">aria-orientation</a> set to vertical. The default value of aria-orientation of a slider is horizontal.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2 id="references">References</h2>
+        <nav aria-labelledby="references">
+            <ul>
+                <li>Visit the <a href="https://www.w3.org/TR/wai-aria-practices/#slidertwothumb" target="_blank">WAI-ARIA Authoring Practices 1.1</a> to read up more on implementing accessible multi-thumb sliders.</li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <h2 id="examples">Examples</h2>
+        <nav aria-labelledby="examples">
+            <ul>
+                <li><a>Multi-thumb slider example</a> above</li>
+                <li>Implemented <a href="https://www.w3.org/TR/wai-aria-practices/examples/slider/multithumb-slider.html" target="_blank">Multi-thumb Slider Examples</a></li>
+            </ul>
+        </nav>
+    </section>
+</article>

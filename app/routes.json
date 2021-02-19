@@ -88,6 +88,12 @@
       "html-only": true
     },
     {
+      "title": "Multi-Thumb Sliders",
+      "hash": "#multithumbsliders",
+      "view": "multithumbsliders",
+      "html-only": true
+    },
+    {
       "title": "404",
       "hash": "#404",
       "view": "404",
