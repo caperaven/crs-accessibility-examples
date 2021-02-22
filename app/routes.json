@@ -94,6 +94,12 @@
       "html-only": true
     },
     {
+      "title": "Window Splitters",
+      "hash": "#windowsplitter",
+      "view": "windowsplitter",
+      "html-only": true
+    },
+    {
       "title": "404",
       "hash": "#404",
       "view": "404",

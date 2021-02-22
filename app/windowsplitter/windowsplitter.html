@@ -1,0 +1,131 @@
+<article>
+    <section>
+        <h2>How to define Window Splitters</h2>
+        <p>
+            A window splitter is a movable separator between two sections, or panes, of a window enabling
+            users to change the relative size of the panes. A window splitter can be either variable or fixed.
+            A fixed splitter toggles between two positions, whereas a variable splitter can be adjusted to any position
+            within an allowed range.
+        </p>
+        <p>
+            A window splitter has a value that represents the size of one of the panes, which in this pattern, is called the primary pane.
+            When the splitter has its minimum value, the primary pane has its smallest size and the secondary pane has its largest size.
+            The splitter also has an accessible name that matches the name of the primary pane.
+            Note: the term "primary pane" does not describe the importance or purpose of content inside the pane.
+        </p>
+        <html-to-text src="/templates/window-splitter-example.html"></html-to-text>
+        <p>
+            Looking at the above example:
+            <ul>
+                <li>
+                    Two article elements are provided which contain some content, note the div acting as the window-splitter is positioned in between the two article elements.
+                </li>
+                <li>
+                    Focusing on the div acting as the separator:
+                    <ul>
+                        <li>
+                            It has the <a href="https://www.w3.org/TR/wai-aria-1.1/#separator" target="_blank">separator role</a> indicating a divider separating and distinguishing sections of content (or groups of menu items)
+                        </li>
+                        <li>
+                            The <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-controls" target="_blank">aria-controls</a> attribute is to "main-content" which is the id reference of the first article. This aria property identifies the element whose content
+                            or presence is controlled by the current element
+                        </li>
+                        <li>
+                            As no labelling element that would describe the window-splitter is given, the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label" target="_blank">aria-label</a> attribute as been supplied.
+                        </li>
+                        <li>
+                            The <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuenow" target="_blank">aria-valuenow</a> property represents the current position of the separator and is updated as the user interacts with the separator
+                        </li>
+                        <li>
+                            The <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemin" target="_blank">aria-valuemin</a> property which defines the minimum allowed value.
+                        </li>
+                        <li>
+                            The <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemax" target="_blank">aria-valuemax</a> property which defines the maximum value for the range.
+                        </li>
+                        <li>
+                            Finally the tabindex is set to 0 to include the separator in the tab page order.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <h2>Keyboard Interaction</h2>
+        <ul>
+            <li>
+                Left Arrow: moves a vertical splitter to the left.
+            </li>
+            <li>
+                Right Arrow: moves a vertical splitter to the right.
+            </li>
+            <li>
+                Up Arrow: moves a horizontal splitter up.
+            </li>
+            <li>
+                Down Arrow: moves a horizontal splitter down.
+            </li>
+            <li>
+                Enter: If the primary pane is not collapsed, collapses the pane. If the pane is collapsed, restores the splitter
+                to its previous position.
+            </li>
+            <li>
+                Home (Optional): Moves splitter to the position that gives the primary pane its smallest allowed size. This may
+                completely collapse the primary pane.
+            </li>
+            <li>
+                End (Optional): Moves splitter to the position that gives the primary pane its largest allowed size. This may
+                completely collapse the secondary pane.
+            </li>
+            <li>
+                F6 (Optional): Cycle through window panes.
+            </li>
+        </ul>
+        <p>
+            NOTE: A fixed size splitter omits implementation of the arrow keys
+        </p>
+    </section>
+    <section>
+        <h2>WAI-ARIA Roles, States & Properties</h2>
+        <ul>
+            <li>
+                The element that serves as the focusable splitter has role <a href="https://www.w3.org/TR/wai-aria-1.1/#separator" target="_blank">separator</a>
+            </li>
+            <li>
+                The separator element has the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuenow" target="_blank">aria-valuenow</a> property set to a decimal value representing the current
+            position of the separator.
+            </li>
+            <li>
+                The separator element has the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemin" target="_blank">aria-valuemin</a> property set to a decimal value that represents the position
+                where the primary pane has its minimum size. This is typically 0.
+            </li>
+            <li>
+                The separator element has the <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-valuemax" target="_blank">aria-valuemax</a> property set to a decimal value the represents the position where
+                the primary pane has its maximum size. This is typically 100.
+            </li>
+            <li>
+                If the primary pane has a visible label, it is referenced by <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-labelledby" target="_blank">aria-labelledby</a> on the separator element.
+                Otherwise, the separator element has a label provided by <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-label" target="_blank">aria-label</a>
+            </li>
+            <li>
+                The separator element has <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-controls" target="_blank">aria-controls</a> referring to the primary pane.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2 id="references">References</h2>
+        <nav aria-labelledby="references">
+            <ul>
+                <li>Visit the <a href="https://www.w3.org/TR/wai-aria-practices/#windowsplitter" target="_blank">WAI-ARIA Authoring Practices 1.1</a> to read up more on implementing accessible window splitters.</li>
+            </ul>
+        </nav>
+    </section>
+    <section>
+        <h2 id="examples">Examples</h2>
+        <nav aria-labelledby="examples">
+            <ul>
+                <li>The given <a href="" target="_blank">example</a> above</li>
+            </ul>
+        </nav>
+    </section>
+</article>
